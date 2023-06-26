@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "noteable",
-    "slug": "noteable",
+    "name": "enjobyable",
+    "slug": "enjobyable",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -27,6 +27,6 @@
       "favicon": "./assets/favicon.png",
       "bundler": "metro"
     },
-    "scheme": "noteable"
+    "scheme": "enjobyable"
   }
 }
