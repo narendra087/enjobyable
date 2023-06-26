@@ -11,7 +11,6 @@ const Home = () => {
   
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
-      <Text>HAHAHA</Text>
       <Stack.Screen
         options={{
           headerStyle: { backgroundColor: COLORS.lightWhite },
