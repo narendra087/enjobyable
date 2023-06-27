@@ -79,7 +79,12 @@ const JobDetails = () => {
             <Text>Something wrong</Text>
           ) : (
             <View style={{padding: SIZES.medium, paddingBottom: 100}}>
-              <Company  />
+              <Company
+                logo={data?.employer_logo}
+                title={data?.job_title}
+                name={data?.employer_name}
+                location={data?.job_country}
+              />
               
               <JobTabs />
               
