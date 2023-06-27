@@ -42,8 +42,6 @@ const JobDetails = () => {
     const jobIndex = jobList.findIndex((job) => job?.job_id === params?.id)
     if (jobIndex !== -1) {
       setData(jobList[jobIndex])
-    } else {
-      router.push('/')
     }
   }, [params])
   
@@ -54,6 +52,30 @@ const JobDetails = () => {
   
   const onRefresh = () => {
     console.log('on refresh')
+  }
+  
+  const renderJobContent = () => {
+    switch (activeTab) {
+      case 'About':
+        return <JobAbout
+          info={data?.job_description ?? 'No Data Provided'}
+        />
+
+      case 'Qualification':
+        return <Specifics
+          title='Qualifications'
+          points={data?.job_highlights?.Qualifications ?? ['N/A']}
+        />
+
+      case 'Responsibilities':
+        return <Specifics
+          title='Responsibilities'
+          points={data?.job_highlights?.Responsibilities ?? ['N/A']}
+        />
+
+      default:
+        break;
+    }
   }
   
   return (
@@ -97,7 +119,7 @@ const JobDetails = () => {
                 setActiveTab={setActiveTab}
               />
               
-              
+              {renderJobContent()}
             </View>
           )}
         </ScrollView>
