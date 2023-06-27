@@ -10,7 +10,7 @@ const jobTypes = [
   'Full-Time', 'Part-Time', 'Freelance', 'Internship', 'Contract', 'Volunteer'
 ]
 
-const Welcome = () => {
+const Welcome = ({ keyword, setKeyword, handlePress }) => {
   const router = useRouter()
   
   const [activeJobType, setactiveJobType] = useState('Full-Time')
@@ -26,13 +26,13 @@ const Welcome = () => {
         <View style={styles.searchWrapper}>
           <TextInput
             style={styles.searchInput}
-            value=''
-            onChange={() => {}}
+            value={keyword}
+            onChangeText={(text) => setKeyword(text)}
             placeholder='Search your jobyable'
           />
         </View>
           
-        <TouchableOpacity style={styles.searchBtn} onPress={() => {}}>
+        <TouchableOpacity style={styles.searchBtn} onPress={handlePress}>
           <Image
             source={icons.search}
             resizeMode='contain'
