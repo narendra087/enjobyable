@@ -13,15 +13,19 @@ import PopularJobCard from '../../../components/common/cards/popular/PopularJobC
 
 const Popularjobs = () => {
   const router = useRouter()
+  
+  // *** Using Dummy Data ***
+  const data = jobList
   const isLoading = false
   const error = false
+  
+  // *** Using Fetch Rapid API ***
   // const { data, isLoading, error } = useFetch("search", {
   //   query: "React developer",
   //   num_pages: "1",
   // });
   
   const [selectedJob, setSelectedJob] = useState();
-  console.log(jobList)
   
   const handlePress = (item) => {
     // router.push(`/job-details/${item.job_id}`);
@@ -44,7 +48,7 @@ const Popularjobs = () => {
           <Text>Something wrong</Text>
         ) : (
           <FlatList
-            data={jobList}
+            data={data}
             keyExtractor={item => item.job_id}
             contentContainerStyle={{columnGap: SIZES.medium}}
             horizontal
