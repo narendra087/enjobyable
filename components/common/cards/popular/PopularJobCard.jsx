@@ -2,8 +2,6 @@ import { View, Text, TouchableOpacity, Image } from 'react-native'
 
 import styles from './popularjobcard.style'
 
-import { checkImageURL } from '../../../../utils'
-
 const PopularJobCard = ({item, selectedJob, handlePress}) => {
   return (
     <TouchableOpacity
@@ -19,7 +17,6 @@ const PopularJobCard = ({item, selectedJob, handlePress}) => {
       </TouchableOpacity>
       
       <Text style={styles.companyName} numberOfLines={1}>
-        {console.log(checkImageURL(item?.employer_logo)) ? '1' : '0'}
         {item?.employer_name || '-'}
       </Text>
       
