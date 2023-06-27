@@ -50,9 +50,11 @@ const JobDetails = () => {
   // })
   
   
-  const onRefresh = () => {
-    console.log('on refresh')
-  }
+  const onRefresh = useCallback(() => {
+    setRefreshing(true)
+    // refetch()
+    setRefreshing(false)
+  }, [])
   
   const renderJobContent = () => {
     switch (activeTab) {
