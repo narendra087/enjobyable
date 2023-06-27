@@ -23,6 +23,10 @@ import { jobList } from '../../constants/dummy'
 
 import useFetch from '../../hooks/useFetch'
 
+const tabs = [
+  'About', 'Qualification', 'Responsibilities'
+]
+
 const JobDetails = () => {
   const params = useSearchParams()
   const router = useRouter()
@@ -32,6 +36,7 @@ const JobDetails = () => {
   
   const [data, setData] = useState()
   const [refreshing, setRefreshing] = useState(false)
+  const [activeTab, setActiveTab] = useState(tabs[0])
   
   useEffect(() => {
     const jobIndex = jobList.findIndex((job) => job?.job_id === params?.id)
@@ -86,7 +91,11 @@ const JobDetails = () => {
                 location={data?.job_country}
               />
               
-              <JobTabs />
+              <JobTabs
+                tabs={tabs}
+                activeTab={activeTab}
+                setActiveTab={setActiveTab}
+              />
               
               
             </View>
