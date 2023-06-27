@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@expo/webpack-config": "^18.0.1",
+    "axios": "^1.4.0",
     "expo": "~48.0.18",
     "expo-constants": "^14.2.1",
     "expo-font": "^11.1.1",
@@ -26,7 +27,8 @@
     "react-native-web": "~0.18.10"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "react-native-dotenv": "^3.4.9"
   },
   "resolutions": {
     "metro": "0.76.0",
